@@ -2,6 +2,7 @@ from django.shortcuts import render
 from blog.models import Article
 from django.http import Http404
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required  
 
 # Create your views here.
 def index(request):
@@ -19,3 +20,7 @@ def detail(request, article_id):
 	except Article.DoesNotExist:
 		raise Http404("Article does not exist")
 	return render(request, 'detail.html', {'article': article})
+
+@login_required
+def uploadlist(request):
+	return render(request, 'uploadlist.html')

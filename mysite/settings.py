@@ -120,3 +120,5 @@ USE_TZ = True
 APP_PATH=os.path.dirname(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(APP_PATH,'static').replace('\\','/')
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = '/index'

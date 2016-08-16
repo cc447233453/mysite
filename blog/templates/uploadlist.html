@@ -30,17 +30,7 @@
 {% include "include/navigation.html" %}
 
 <div class="row content">
-  <div class="col-md-8">    <ul class="list-group">
-{% for article in article_list %}
-  <li class="list-group-item">
-    <a href="{% url 'detail' article.id %}"><h2>{{ article.title }}</h2></a>
-    <p>{{ article.create_time }}</p>
-</li>{% endfor%}
-</ul>
-
-{% include "include/pagination.html" %}
-
-</div>
+  <div class="col-md-8"></div>
   <div class="col-md-4">
     <ul class="nav nav-pills nav-stacked">
       <li role="presentation"><a href="uplist">文件管理</a></li>

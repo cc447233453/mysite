@@ -1,0 +1,15 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/index">主页</a></li>
+            <li><a href="/accounts/login">登录</a></li>
+            <li><a href="/accounts/register">注册</a></li>
+          </ul>
+          {% if user.is_authenticated %}
+		    <p style="color: #fff;">Welcome, {{ user.username }}. Thanks for logging in.</p>
+		{% else %}
+		    <p style="color: #fff;">Welcome, new user. Please log in.</p>
+		{% endif %}
+        </div><!--/.nav-collapse -->
+
+    </nav>
