@@ -1,0 +1,37 @@
+<nav>
+  <ul class="pagination">
+    {% if article_list.has_previous %}
+      <li>
+      <a href="?page_no={{article_list.previous_page_number}}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+      </li>
+    {% else %}
+      <li class="disabled">
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+      </li>
+    {% endif %}
+    {% for page in article_list.paginator.page_range %}
+       {% if page < article_list.number|add:5 and page > article_list.number|add:-4 and page != article_list.number %}
+          <li><a href="?page_no={{ page }}">{{page}}</a></li>
+       {% elif page == article_list.number %}
+          <li class="disabled"><a href="#">{{page}}</a></li>
+       {% endif %}
+    {% endfor %}
+    {% if article_list.has_next %}
+      <li>
+        <a href="?page_no={{article_list.next_page_number}}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="disabled">
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
